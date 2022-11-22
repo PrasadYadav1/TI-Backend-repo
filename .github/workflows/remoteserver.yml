@@ -8,10 +8,13 @@ jobs:
     steps:
     - name: executing remote ssh commands using private key
       uses: appleboy/ssh-action@master
+      env:
+          description: 'enable debug mode'
+          default: false
       with:
         host: "103.242.116.207:22"
         username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.PUBLIC_KEY }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           whoami
           ls -al
