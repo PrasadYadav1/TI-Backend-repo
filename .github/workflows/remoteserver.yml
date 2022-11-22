@@ -11,7 +11,7 @@ jobs:
       with:
         host: "103.242.116.207:22"
         username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        key: ${{ secrets.PUBLIC_KEY }}
         script: |
           whoami
           ls -al
